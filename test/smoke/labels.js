@@ -1,13 +1,15 @@
-const sel = require ('../../data/selectors.json')
-const exp = require ('../../data/expected.json')
-describe('My Little Hero', function () { //define suite title by passing a string
+const sel = require ('../../data/selectors.json');
+const exp = require ('../../data/expected.json');
 
-    describe('Getting to the page', function () { //define sub-suite title by passing a string
+describe('My Little Hero', function () {
 
-        it('TC-001 Title is correct ', function () { //define test title by passing a string
-            browser.url('https://qa-apps.netlify.app/app_my_hero'); //open baseUrl
-            let title = browser.getTitle(); //get page title and assign it to the "title" variable
-            expect(title).toEqual('MLH trial'); //compare {title} (actual) and "MLH trial" (expected)
+    describe('Getting to the page', function () {
+
+        it('TC-001 Title is correct ', function () {
+
+            browser.url('');
+            let title = browser.getTitle();
+            expect(title).toEqual('MLH trial');
         });
 
     });
@@ -37,26 +39,23 @@ describe('My Little Hero', function () { //define suite title by passing a strin
     });
 
     describe('Labels are correct', function () {
-
         it('TC-006 Label for name = 1. What is your Hero\'s name?', function () {
             const text = $$(sel.label)[0].getAttribute('title');
             expect(text).toEqual(exp.labelName);
         });
-
         it('TC-007 Label for gender = 2. Please choose a gender.', function () {
             const text = $$(sel.label)[1].getAttribute('title');
             expect(text).toEqual(exp.labelGender);
         });
-
-        it('TC-008 Label for age = 3. How old is your hero?', function () {
+        it('TC-008 Label for age = 3. How old is your Hero?', function () {
             const text = $$(sel.label)[2].getAttribute('title');
             expect(text).toEqual(exp.labelAge);
         });
-
         it('TC-009 Label for story = 4. What type of story would you like to read?', function () {
             const text = $$(sel.label)[3].getAttribute('title');
             expect(text).toEqual(exp.labelStory);
         });
 
     });
+
 });
