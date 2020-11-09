@@ -55,7 +55,10 @@ describe('My Little Hero', function () {
             const text = $$(sel.label)[3].getAttribute('title');
             expect(text).toEqual(exp.labelStory);
         });
-
+        it('TC-010 Label for upload = 5. Upload an image (optional)', function () {
+            const text = $(sel.image).getAttribute('title');
+            expect(text).toEqual(exp.labelUpload);
+        });
     });
 
 });
